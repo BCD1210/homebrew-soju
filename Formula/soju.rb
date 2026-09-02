@@ -1,10 +1,10 @@
 class Soju < Formula
-  desc "Free Battle.net, Diablo II: Resurrected and Steam on Apple Silicon"
+  desc "Free Battle.net, Steam, Epic and GOG launchers on Apple Silicon"
   homepage "https://github.com/BCD1210/soju"
-  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "e6a5d8b1eb738f72bfc111566c55a9ce8ecf95ad9e86c4d1d69235bb26a1d264"
+  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.3.0.tar.gz"
+  sha256 "16f064eb0aac964214309b45d1961169cc3e608517b764830b605a57c4457e07"
   license "GPL-3.0-or-later"
-  version "1.2.0"
+  version "1.3.0"
 
   depends_on :macos
   depends_on arch: :arm64
