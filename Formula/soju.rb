@@ -10,8 +10,12 @@ class Soju < Formula
   depends_on arch: :arm64
 
   def install
-    libexec.install "install.sh", "scripts", "docs", "patches", "LICENSE", "NOTICE"
-    bin.install_symlink libexec/"scripts/soju"
+    # tools/ and third_party/ hold the C sources the bottle scripts compile
+    # (tray-restore helpers, the steamwebhelper wrapper).
+    libexec.install "install.sh", "scripts", "docs", "patches", "tools", "third_party", "LICENSE", "NOTICE"
+    # An exec script, not a symlink: the wrapper locates the repo from its own
+    # path, and through a bin/ symlink that resolved to the brew prefix.
+    bin.write_exec_script libexec/"scripts/soju"
   end
 
   def caveats
@@ -27,5 +31,8 @@ class Soju < Formula
 
   test do
     assert_match "Usage", shell_output("#{bin}/soju help")
+    # doctor exercises ROOT resolution: it must find the scripts, not the prefix.
+    assert_match "soju doctor", shell_output("#{bin}/soju doctor", 1)
+    assert_predicate libexec/"tools/soju-epic-restore.c", :exist?
   end
 end
