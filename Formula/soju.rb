@@ -1,10 +1,10 @@
 class Soju < Formula
   desc "Free Battle.net, Steam, Epic and GOG launchers on Apple Silicon"
   homepage "https://github.com/BCD1210/soju"
-  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "a198b58ef6a93b30ceaaa8c3aa7baa65f4086fd7bab5d38316083ca6ee8405cc"
+  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.3.4.tar.gz"
+  sha256 "933616e8ad3ecf8a5fe623ec2377c71c59699ac483f575964d3f9045e3f3cd99"
   license "GPL-3.0-or-later"
-  version "1.3.3"
+  version "1.3.4"
 
   depends_on :macos
   depends_on arch: :arm64
