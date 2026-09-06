@@ -1,10 +1,10 @@
 class Soju < Formula
-  desc "Free Battle.net, Steam, Epic and GOG launchers on Apple Silicon"
+  desc "Unified game library and Windows launchers for Apple Silicon"
   homepage "https://github.com/BCD1210/soju"
-  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "8557e227770a5d3277c0d002577ff63b53b6809b0dc27064a0b5c24772b0596d"
+  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.5.0.tar.gz"
+  sha256 "fada32f3728c89b5d5c0317d2c44e73dc23720e1123f7a4934a3be22209ce79e"
   license "GPL-3.0-or-later"
-  version "1.4.0"
+  version "1.5.0"
 
   depends_on :macos
   depends_on arch: :arm64
@@ -32,9 +32,12 @@ class Soju < Formula
   end
 
   test do
-    assert_match "1.4.0", shell_output("#{bin}/soju --version")
+    assert_match "1.5.0", shell_output("#{bin}/soju --version")
     assert_predicate libexec/"resources/steam-support.json", :exist?
     assert_predicate libexec/"app/Soju.swift", :exist?
+    assert_predicate libexec/"app/Library.swift", :exist?
+    assert_predicate libexec/"scripts/gog-launch.py", :exist?
+    assert_match '"games"', shell_output("#{bin}/soju library")
     assert_match "Usage", shell_output("#{bin}/soju help")
     # doctor exercises ROOT resolution: it must find the scripts, not the prefix.
     assert_match "soju doctor", shell_output("#{bin}/soju doctor || true")
