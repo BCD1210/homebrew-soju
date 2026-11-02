@@ -1,10 +1,10 @@
 class Soju < Formula
   desc "Unified game library and Windows launchers for Apple Silicon"
   homepage "https://github.com/BCD1210/soju"
-  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "57eeb87c7748e37a309b4011fdd0090251a900ebd81ad0caf4de80ea5f3d5eb3"
+  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.8.2.tar.gz"
+  sha256 "d6d18f3dda3ab6d9afbf44238cc95a3fe3f1c8ece0498ec0f1735042d1a1eb61"
   license "GPL-3.0-or-later"
-  version "1.8.1"
+  version "1.8.2"
 
   depends_on :macos
   depends_on arch: :arm64
@@ -32,7 +32,7 @@ class Soju < Formula
   end
 
   test do
-    assert_match "1.8.1", shell_output("#{bin}/soju --version")
+    assert_match "1.8.2", shell_output("#{bin}/soju --version")
     assert_predicate libexec/"resources/steam-support.json", :exist?
     assert_predicate libexec/"app/Soju.swift", :exist?
     assert_predicate libexec/"app/Library.swift", :exist?
