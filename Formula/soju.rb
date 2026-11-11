@@ -1,10 +1,10 @@
 class Soju < Formula
   desc "Unified game library and Windows launchers for Apple Silicon"
   homepage "https://github.com/BCD1210/soju"
-  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.14.0.tar.gz"
-  sha256 "22323fdabf709ab22fb29312d0ba72afd5f52f6a9de09d9d2e51e7c4b863a750"
+  url "https://github.com/BCD1210/soju/archive/refs/tags/v1.14.1.tar.gz"
+  sha256 "e5a47c260112dc680766e6cd83d838b5708781f4bfc1911f6f88a1d0a280fcb7"
   license "GPL-3.0-or-later"
-  version "1.14.0"
+  version "1.14.1"
 
   depends_on :macos
   depends_on arch: :arm64
